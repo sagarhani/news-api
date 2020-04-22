@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { getHeadlines, searchNews } = require("../services/newsService");
-const { registerUser } = require("../services/userService");
+const { registerUser, sendEmail } = require("../services/userService");
 
 router.get("/headlines", async (req, res) => {
   try {
@@ -25,6 +25,15 @@ router.get("/search", async (req, res) => {
 router.post("/user", async (req, res) => {
   try {
     const data = await registerUser(req.body);
+    res.json(data);
+  } catch (error) {
+    res.json({ message: error });
+  }
+});
+
+router.post("/sendEmail", async (req, res) => {
+  try {
+    const data = await sendEmail(req.body);
     res.json(data);
   } catch (error) {
     res.json({ message: error });
