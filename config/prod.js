@@ -4,5 +4,5 @@ module.exports = {
   AUTH_ID: process.env.AUTH_ID,
   CLIENT_ID: process.env.CLIENT_ID,
   SENDGRID_KEY: process.env.SENDGRID_KEY,
-  EMAIL_FROM_ADDRESS: process.env.EMAL_FROM_ADDRESS
+  EMAIL_FROM_ADDRESS: process.env.EMAIL_FROM_ADDRESS
 };
